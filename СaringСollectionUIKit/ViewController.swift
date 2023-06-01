@@ -29,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 
         view.addSubview(collection)
 
-        collection.decelerationRate = .fast
+//        collection.decelerationRate = .fast
 
         dataSource = UICollectionViewDiffableDataSource(collectionView: collection) { (collectionView: UICollectionView, indexPath: IndexPath, item: String) -> UICollectionViewCell? in
 
@@ -51,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 
         collection.frame = view.frame
         let flowLayout = collection.collectionViewLayout as? UICollectionViewFlowLayout
-        flowLayout?.sectionInset = UIEdgeInsets(top: 100, left: view.layoutMargins.left, bottom: 0, right: 0)
+        flowLayout?.sectionInset = UIEdgeInsets(top: 100, left: collection.layoutMargins.left, bottom: 0, right: 0)
     }
 }
 
@@ -71,8 +71,8 @@ class CastomFlouLayout: UICollectionViewFlowLayout {
 
         itemSize = CGSize(width: cellWidth, height: 400)
         scrollDirection = .horizontal
-        minimumLineSpacing = 8
-        minimumInteritemSpacing = 0
+//        minimumLineSpacing = 16
+//        minimumInteritemSpacing = 0
     }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
